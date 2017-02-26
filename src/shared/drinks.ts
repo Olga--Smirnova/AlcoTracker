@@ -1,5 +1,5 @@
 export interface IDrinks {
-    family: string
+    family: string,
 	name: 	string,
 	img: 	string,
 	contains: 	number

@@ -23,14 +23,14 @@
 
 <!-- Choose default drink -->
 	<ion-row>
- 		<ion-slides loop="true">
-      		<ion-slide *ngFor="let drink of drinks">
+ 		<ion-slides loop="true" #drinksFamily (ionSlideTap)="defaultDrinkSelected()">
+        <ion-slide *ngFor="let drink of drinks">
             <img [src]="drink.img" />
 				    <h2 [innerHTML]="drink.family"></h2>
             <p>{{ drink.contains }}</p>
-      		</ion-slide>
-    	</ion-slides>
-  	</ion-row>
+      	</ion-slide>
+    </ion-slides>
+  </ion-row>
 
 <!-- Go to Main Page -->
   	<ion-row>

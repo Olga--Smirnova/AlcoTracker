@@ -15,4 +15,15 @@
 
 <ion-content padding>
 
+<!-- Drinks carousel -->
+    <ion-row>
+ 	  	<ion-slides loop="true" #drinksCarousel [options]="sliderOptions" >
+          <ion-slide *ngFor="let drink of drinks">
+              <img [src]="drink.img" />
+	  			    <h2 [innerHTML]="drink.family"></h2>
+              <p>{{ drink.contains }}</p>
+        	</ion-slide>
+      </ion-slides>
+    </ion-row>
+
 </ion-content>
