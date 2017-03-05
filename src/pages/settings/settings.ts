@@ -4,12 +4,15 @@ import { Storage } from '@ionic/storage';
 import { MainPage } from '../pages';
 import { IDrinks } from '../../shared/shared';
 import { DrinksService } from '../../shared/shared';
+import { NgClass } from 'angular2/common';
 
 @Component({
   selector: 'page-settings',
   templateUrl: 'settings.html'
 })
 export class SettingsPage {
+	genderSelected: boolean = false;
+
   public drinks: IDrinks[] = [
       {
 			family: 	'beer1',
@@ -76,7 +79,13 @@ export class SettingsPage {
     //this.storage.set("gender", gender);
     this.storage.set("gender", gender).then(() => {
       console.log('Gender has been set to ' + gender);
+			//this.genderSelected = gender;
     });
+		
+		//document.getElementById(gender + '-selected').style.display = "block";
+		 //var genderBtn = document.getElementById(gender + "-selected").classList;
+		
+
   }
 
   // set drink family
