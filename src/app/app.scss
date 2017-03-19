@@ -15,13 +15,25 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@font-face {
+    font-family: "pinchefont";
+    src: url("../assets/fonts/custom/pinchefont.otf");
+    src: url("../assets/fonts/custom/pinchefont.otf") format("otf"),
+         url("../assets/fonts/custom/pinchefont.eot") format("embedded-opentype"),
+         url("../assets/fonts/custom/pinchefont.woff2") format("woff2"),
+         url("../assets/fonts/custom/pinchefont.woff") format("woff"),
+         url("../assets/fonts/custom/pinchefont.ttf") format("truetype"),
+         url("../assets/fonts/custom/pinchefont.svg#pinchefont") format("svg");
+}
+
 
 /* Helper classes */
-body, .bg-primary { background: color($colors, primary);}
+body, .bg-primary { background: color($colors, primary); text-transform: uppercase; }
 .center { margin: 0 auto; }
 
 /* Defaults */
 button { background: transparent; }
+
 
 /* Imports */
 @import '../pages/settings/settings';

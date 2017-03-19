@@ -8,21 +8,16 @@
 
 <ion-content text-center class="bg-primary">
 <!-- Choose gender -->
-  	<ion-row>
-      	<h4 center>I'm a</h4>
+  	<ion-row text-center >
+      	<h4 class="center">I'm a</h4>
 	</ion-row>
 
-	<ion-row>
+	<ion-row margin>
       	<ion-col width-50>
 			<button (click)="genederSelected = !genederSelected; setGender('male')" [ngClass]="{'selected': genederSelected }">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					 viewBox="0 0 74 84" style="enable-background:new 0 0 74 84;" xml:space="preserve" id="male">
-				<style type="text/css">
-					.st0{fill:#6AADAB;}
-					.st1{fill:#040506;}
-					.st2{fill:#FFFFFF;}
-				</style>
-				<g id="Layer_2">
+				<g id="male-Layer_2">
 					<g>
 						<path class="st0" d="M55.7,75.6c-2-4.3-8-5.7-12.3-6.1c-6.5-0.5-13.2-0.3-19.7,0.8c-3.1,0.6-8.7,1.9-8.5,6.2
 							c0.3,6,9.6,6.5,15.9,6.2c0.2,0,0.3,0,0.5,0c6.4,0.3,13.6,0.9,19.8-1.2C53.7,80.7,57.1,78.5,55.7,75.6z"/>
@@ -58,12 +53,7 @@
 			<button (click)="genederSelected = !genederSelected; setGender('female')" [ngClass]="genederSelected ? 'hidden' : 'selected'">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					 viewBox="0 0 74 84" style="enable-background:new 0 0 74 84;" xml:space="preserve" id="female">
-				<style type="text/css">
-					.st0{fill:#6AADAB;}
-					.st1{fill:#040506;}
-					.st2{fill:#FFFFFF;}
-				</style>
-				<g id="Layer_2">
+				<g id="female-Layer_2">
 					<path class="st0" d="M55.8,75.6c-2-4.3-8-5.7-12.3-6.1c-6.5-0.5-13.2-0.3-19.7,0.8c-3.1,0.6-8.7,1.9-8.5,6.2
 						c0.3,6,9.6,6.5,15.9,6.2c0.2,0,0.3,0,0.5,0c6.4,0.3,13.6,0.9,19.8-1.2C53.8,80.7,57.2,78.5,55.8,75.6z"/>
 					<path class="st1" d="M66.3,38.8c-1.1,0-2.2-0.1-3.2,0.1c-1.2,0.2-2.4,0.3-3.5-0.1c-0.1,0-0.2-0.1-0.3-0.1c-0.1-1-0.2-2-0.4-3
@@ -100,18 +90,33 @@
   	</ion-row>
 
 <!-- Choose default drink -->
+	<ion-row text-center margin>
+      	<h4 class="center">and I normally drink</h4>
+	</ion-row>
 	<ion-row>
- 		<ion-slides loop="true" #drinksFamily (ionSlideTap)="defaultDrinkSelected()">
-        <ion-slide *ngFor="let drink of drinks">
-            <img [src]="drink.img" />
-				    <h2 [innerHTML]="drink.family"></h2>
-            <p>{{ drink.contains }}</p>
-      	</ion-slide>
-    </ion-slides>
-  </ion-row>
+		<ion-col width-20>
+			<button class="center" (click)="showPrevSlide()"><</button>
+		</ion-col>
+ 		<ion-slides width-60 loop="true" pager="true" paginationType="bullets" #drinksFamily (ionSlideTap)="defaultDrinkSelected()">
+			 
+        	<ion-slide *ngFor="let drink of drinks">
+        	    <img [src]="drink.img" alt="{{ drink.family }}"/>
+      		</ion-slide>
+			  
+    	</ion-slides>
+		<ion-col width-20>
+			<button class="center" (click)="showNextSlide()">></button>
+		</ion-col>
+  	</ion-row>
 
 <!-- Go to Main Page -->
-  	<ion-row>
-    	<button ion-button class="center" (click)="goToMain()">Let's Go</button>
+  	<ion-row class="bottom-page-content">
+		<ion-col width-20></ion-col>
+		<ion-col width-70>
+    		<button class="center" (click)="goToMain()">
+				<img src="assets/images/svg/lets-go.svg" alt="Let's go" id="lets-go"/>
+			</button>
+		</ion-col>
+		<ion-col width-10></ion-col>
   	</ion-row>
 </ion-content>

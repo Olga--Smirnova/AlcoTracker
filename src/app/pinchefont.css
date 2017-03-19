@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'pinchefont';
+    src: url('fonts/pinchefont.eot');
+    src: url('fonts/pinchefont.eot') format('embedded-opentype'),
+         url('fonts/pinchefont.woff2') format('woff2'),
+         url('fonts/pinchefont.woff') format('woff'),
+         url('fonts/pinchefont.ttf') format('truetype'),
+         url('fonts/pinchefont.svg#pinchefont') format('svg');
+}
