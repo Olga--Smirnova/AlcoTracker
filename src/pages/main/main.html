@@ -1,9 +1,3 @@
-<!--
-  Generated template for the Main page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -17,13 +11,14 @@
 
 <!-- Drinks carousel -->
     <ion-row>
- 	  	<ion-slides loop="true" #drinksCarousel [options]="sliderOptions" >
-          <ion-slide *ngFor="let drink of drinks">
+ 	  	<ion-slides loop="true" pager="true" paginationType="bullets" #drinksCarousel >
+          <ion-slide *ngFor="let drink of drinksInfo">
               <img [src]="drink.img" />
 	  			    <h2 [innerHTML]="drink.family"></h2>
-              <p>{{ drink.contains }}</p>
+              <p>{{ drink.name }}</p>
+              <p>{{ drink.amount }}</p>
         	</ion-slide>
       </ion-slides>
     </ion-row>
-
+    
 </ion-content>

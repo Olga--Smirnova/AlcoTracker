@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-import { MainPage } from '../pages';
+import { MainTabsPage } from '../pages';
 import { IDrinks } from '../../shared/shared';
 import { DrinksService } from '../../shared/shared';
 
@@ -58,7 +58,7 @@ export class SettingsPage {
   // navigate to Main Page
   goToMain()
   {
-    this.navCtrl.push(MainPage);
+    this.navCtrl.push(MainTabsPage);
     //this.navCtrl.setRoot(MainPage);
   }
 

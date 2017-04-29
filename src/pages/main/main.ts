@@ -1,8 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+//import { File } from '@ionic-native/file';
+import { Http } from '@angular/http';
 import { IDrinks } from '../../shared/shared';
 import { DrinksService } from '../../shared/shared';
+import { DrinksInfoService } from '../../shared/shared';
 
 @Component({
   selector: 'page-main',
@@ -52,7 +55,7 @@ export class MainPage {
   @ViewChild('drinksCarousel') slider: Slides;
 
   private initialSlide: number;
-
+  drinksInfo: any;
   //public slidesOptions = {};
   // public slidesOptions = { 
   //     initialSlide: 2
@@ -67,11 +70,14 @@ export class MainPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public storage: Storage,
-              public _drinksService : DrinksService ) {}
+              public _drinksService : DrinksService,
+              //private file: File,
+              private DrinksInfoService: DrinksInfoService) {}
   
   
 
   ionViewWillEnter() {
+    //this.file.checkDir(this.file.dataDirectory, 'applicationDirectory').then(_ => console.log('Directory exists')).catch(err => console.log('Directory doesnt exist'));
     this.storage.get("drinkFamily").then((defaultDrink) => {
         if (defaultDrink) {
           //this.initialSlide = defaultDrink;
@@ -89,7 +95,6 @@ export class MainPage {
   }
 
   ionViewDidLoad() {
-
     this.storage.get("gender").then((gender) => {
       if (gender) {
         console.log(gender);
@@ -106,19 +111,15 @@ export class MainPage {
       }
     });
 
-  //   slidesOptions = { 
-  //     initialSlide: 
-  //         this.storage.get("drinkFamily").then((defaultDrink) => {
-  //             if (defaultDrink) {
-  //                 return defaultDrink;
-  //             }
-  //     });
-  //  };
+    this.DrinksInfoService.getDrinksInfo().subscribe(
+              data => { this.drinksInfo = data
+              },
+              err => { console.log("Oops JSON!");
+              }
+          );
   }
 
   ngOnInit() {
       //this.slider.update();
   };
-
-
 }

@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MainTabs</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+      <super-tabs scrollTabs selectedTabIndex="1" (tabSelect)="onTabSelect($event)">
+        <super-tab [root]="page1" title="Info page"></super-tab>
+        <super-tab [root]="page2" title="Main page"></super-tab>
+        <super-tab [root]="page3" title="Stats page"></super-tab>
+      </super-tabs>
+</ion-content>
