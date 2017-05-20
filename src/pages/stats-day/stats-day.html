@@ -1,0 +1,14 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+      		{{ today }}
+    	</ion-title>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1 text-center>{{ today }}</h1>
+        <calendar [calendarMode]="calendar.mode"
+                  [currentDate]="today">
+    </calendar>
+</ion-content>

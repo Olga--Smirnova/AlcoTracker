@@ -13,7 +13,9 @@ import { MainPage } from '../pages/main/main';
 import { InfoPage } from '../pages/info/info';
 import { StatsPage } from '../pages/stats/stats';
 import { MainTabsPage } from '../pages/maintabs/maintabs';
+import { StatsDayPage } from '../pages/stats-day/stats-day';
 import { DrinksInfoService } from '../../shared/shared';
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { DrinksInfoService } from '../../shared/shared';
     MainPage,
     InfoPage,
     StatsPage,
-    MainTabsPage
+    MainTabsPage,
+    StatsDayPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    NgCalendarModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     SuperTabsModule.forRoot(),
@@ -38,7 +42,8 @@ import { DrinksInfoService } from '../../shared/shared';
     MainPage,
     InfoPage,
     StatsPage,
-    MainTabsPage
+    MainTabsPage,
+    StatsDayPage
   ],
   providers: [
     StatusBar,

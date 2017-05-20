@@ -1,12 +1,12 @@
-<ion-header>
+<!--<ion-header>
 	<ion-navbar>
 		<ion-title>
       		Settings
     	</ion-title>
   	</ion-navbar>
-</ion-header>
+</ion-header>-->
 
-<ion-content text-center class="bg-primary">
+<ion-content text-center padding class="bg-primary">
 <!-- Choose gender -->
   	<ion-row text-center >
       	<h4 class="center">I'm a</h4>
@@ -97,7 +97,7 @@
 		<ion-col width-20>
 			<button class="center" (click)="showPrevSlide()"><</button>
 		</ion-col>
- 		<ion-slides width-60 loop="true" pager="true" paginationType="bullets" #drinksFamily (ionSlideTap)="defaultDrinkSelected()">
+ 		<ion-slides width-60 loop="true" #drinksFamily (ionSlideTap)="defaultDrinkSelected()" (tap)="defaultDrinkSelected()">
 			 
         	<ion-slide *ngFor="let drink of drinks">
         	    <img [src]="drink.img" alt="{{ drink.family }}"/>

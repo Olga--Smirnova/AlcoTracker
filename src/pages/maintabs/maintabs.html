@@ -8,9 +8,19 @@
 
 
 <ion-content padding>
+      <super-tabs scrollTabs selectedTabIndex="1" tabsPlacement="bottom" (tabSelect)="onTabSelect($event)">
+        <super-tab [root]="page1" title="Info"></super-tab>
+        <super-tab [root]="page2" title="Main page"></super-tab>
+        <super-tab [root]="page3" title="Stats"></super-tab>
+      </super-tabs>
+</ion-content>
+
+<!--<ion-footer padding>
+  <ion-toolbar>
       <super-tabs scrollTabs selectedTabIndex="1" (tabSelect)="onTabSelect($event)">
         <super-tab [root]="page1" title="Info page"></super-tab>
         <super-tab [root]="page2" title="Main page"></super-tab>
         <super-tab [root]="page3" title="Stats page"></super-tab>
       </super-tabs>
-</ion-content>
+  </ion-toolbar>
+</ion-footer>-->

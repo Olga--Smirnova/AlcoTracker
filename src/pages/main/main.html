@@ -1,17 +1,8 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>Main</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
 
 <!-- Drinks carousel -->
     <ion-row>
- 	  	<ion-slides loop="true" pager="true" paginationType="bullets" #drinksCarousel >
+ 	  	<ion-slides loop="true" #drinksCarousel initialSlide="slidesOptions">
           <ion-slide *ngFor="let drink of drinksInfo">
               <img [src]="drink.img" />
 	  			    <h2 [innerHTML]="drink.family"></h2>
@@ -22,3 +13,8 @@
     </ion-row>
     
 </ion-content>
+
+
+<ion-footer padding>
+
+</ion-footer>

@@ -24412,6 +24412,11 @@ super-tabs:not([no-shadow]) > super-tabs-toolbar > ion-toolbar.toolbar::after {
   bottom: -5px;
 }
 
+ion-tabs super-tabs ion-content .scroll-content, ion-tabs super-tabs ion-content .fixed-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
 super-tabs-container {
   width: 100%;
   overflow: hidden;
@@ -24585,6 +24590,11 @@ page-settings #lets-go {
   height: auto;
 }
 
+page-stats-day .dayview-allday-table,
+page-stats-day .dayview-normal-event-container {
+  display: none;
+}
+
 page-settings {
   /* Buttons */
 }
@@ -24627,4 +24637,9 @@ page-settings .selected #female-selected {
 page-settings #lets-go {
   width: 200px;
   height: auto;
+}
+
+page-stats-day .dayview-allday-table,
+page-stats-day .dayview-normal-event-container {
+  display: none;
 }
