@@ -21,11 +21,12 @@ export class MainTabsPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MainTabs');
+      console.log('ionViewDidLoad MainTabs');
+    
   }
 
   onTabSelect(tab: { index: number; id: string; }) {
-    console.log("Selected tab: ", tab);
+      console.log("Selected tab: ", tab);
   }
 
 }

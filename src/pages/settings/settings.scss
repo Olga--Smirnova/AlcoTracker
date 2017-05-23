@@ -7,6 +7,7 @@ page-settings {
     .bottom-page-content { position: fixed; bottom: 40px; }
 
     /* Buttons */
+    // button[disabled], [ion-button][disabled] { opacity: 1; }
     #male, #female { width: 55px; height: auto;}
     #male-selected, #female-selected { display: none; }
     .selected #male-selected,

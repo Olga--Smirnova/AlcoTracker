@@ -16,6 +16,7 @@ import { MainTabsPage } from '../pages/maintabs/maintabs';
 import { StatsDayPage } from '../pages/stats-day/stats-day';
 import { DrinksInfoService } from '../../shared/shared';
 import { NgCalendarModule  } from 'ionic2-calendar';
+import { File } from '@ionic-native/file';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,6 @@ import { NgCalendarModule  } from 'ionic2-calendar';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}, Storage ]
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, Storage, File ]
 })
 export class AppModule {}

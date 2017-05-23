@@ -14,7 +14,7 @@
 
 	<ion-row margin>
       	<ion-col width-50>
-			<button (click)="genederSelected = !genederSelected; setGender('male')" [ngClass]="{'selected': genederSelected }">
+			<button (click)="genederSelected = !genederSelected; setGender('male')" [ngClass]="{'selected': genederSelected }" [disabled]="disableButtonM">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					 viewBox="0 0 74 84" style="enable-background:new 0 0 74 84;" xml:space="preserve" id="male">
 				<g id="male-Layer_2">
@@ -50,7 +50,7 @@
 			</button>
       	</ion-col>
       	<ion-col width-50>
-			<button (click)="genederSelected = !genederSelected; setGender('female')" [ngClass]="genederSelected ? 'hidden' : 'selected'">
+			<button (click)="genederSelected = !genederSelected; setGender('female')" [ngClass]="genederSelected ? 'hidden' : 'selected'" [disabled]="disableButtonF">
 				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 					 viewBox="0 0 74 84" style="enable-background:new 0 0 74 84;" xml:space="preserve" id="female">
 				<g id="female-Layer_2">
@@ -111,8 +111,8 @@
 
 <!-- Go to Main Page -->
   	<ion-row class="bottom-page-content">
-		<ion-col width-20></ion-col>
-		<ion-col width-70>
+		<ion-col width-10></ion-col>
+		<ion-col>
     		<button class="center" (click)="goToMain()">
 				<img src="assets/images/svg/lets-go.svg" alt="Let's go" id="lets-go"/>
 			</button>

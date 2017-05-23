@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
-//import { File } from '@ionic-native/file';
+import { File } from '@ionic-native/file';
 import { Http } from '@angular/http';
 import { DrinksInfoService } from '../../shared/shared';
+
 
 @Component({
   selector: 'page-main',
@@ -21,7 +22,7 @@ export class MainPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public storage: Storage,
-              //private file: File,
+              private file: File,
               private DrinksInfoService: DrinksInfoService) {}
   
   
@@ -33,6 +34,7 @@ export class MainPage {
             err => { console.log("Oops JSON!");
             }
         );
+
 
         this.slidesOptions = { 
           initialSlide: 
@@ -54,12 +56,12 @@ export class MainPage {
                       }
                   }
               })
-      };
+        };
   }
 
-  ionViewDidEnter() {
-
-  }
+    ionViewDidEnter() {
+        
+    }
 
   ionViewDidLoad() {
     this.storage.get("gender").then((gender) => {
